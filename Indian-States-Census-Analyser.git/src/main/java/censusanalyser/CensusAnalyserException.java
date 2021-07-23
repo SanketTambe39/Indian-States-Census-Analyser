@@ -10,5 +10,5 @@ public class CensusAnalyserException extends Exception {
 		public CensusAnalyserException(String message,ExceptionType exceptionType) {
 			super();
 			this.exceptionType = exceptionType;
-		}	
+		}
 }
