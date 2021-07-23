@@ -65,4 +65,19 @@ public class CensusAnalyserTest {
 		}
 	}
 
+	@Test
+	public void givenIndianCensusData_WhenNoHeader_ShouldThrowException() {
+
+		try {
+			CensusAnalyser censusAnalyser = new CensusAnalyser();
+			ExpectedException expectedException = ExpectedException.none();
+			expectedException.expect(CensusAnalyserException.class);
+			censusAnalyser.loadIndiaCensusData(NO_HEADER);
+		} catch (CensusAnalyserException censusAnalyserException) {
+			Assert.assertEquals(CensusAnalyserException.ExceptionType.NO_SUCH_FIELD,
+					censusAnalyserException.exceptionType);
+		}
+
+	}
+
 }
